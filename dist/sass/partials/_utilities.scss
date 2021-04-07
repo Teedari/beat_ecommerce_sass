@@ -1,0 +1,55 @@
+/** Utilities **/
+
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: $font-stack;
+  box-sizing: border-box;
+}
+
+body{
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+img{
+  width: 100%;
+ 
+}
+
+
+
+.img-container{
+  width: 35%;
+  object-fit: fill;
+  object-position: 10px 13px;
+  height: auto;
+}
+
+.container{
+  width: 80%;
+  margin: 0 auto;
+  
+}
+
+@include generate-spaces(); //generate all spaces eg margin and paddings
+
+h1{
+  font-size: 2.8rem;
+}
+.lead{
+  line-height: 1.8;
+}
+
+.center{
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subtitle{
+  color: #fff;
+}

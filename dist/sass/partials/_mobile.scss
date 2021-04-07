@@ -1,0 +1,113 @@
+/** Small Screen Size ***/
+@media(max-width: 576px) {
+  .heading{
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  /** Navigation **/
+  
+}
+
+
+
+
+
+
+
+
+/** Medium Screen Size ***/
+@media(max-width: 768px) {
+  %btn{
+    padding: .5rem 1rem;
+    
+    font-size: .8rem;
+
+  }
+  .fixed{
+    padding: 1rem 3rem;
+    position: fixed;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80% auto;
+    top: 0;
+    background-color: lighten($color: $black-color, $amount: 2%);
+    .navbar-brand{
+      font-size: 1.8rem;
+      // float: left;
+    }
+
+    .navbar-nav{
+      @include hide;
+      transition: all 500ms linear 500ms;
+      .nav-item{
+        display: block;
+        padding: 1rem 0;
+        &:not(:first-child){
+          margin-left: 0;
+        }
+      }
+      &.show{
+       @include show;
+      }
+    }
+  }
+
+  /** Showcase **/
+  .showcase {
+    @include set-bg-to-text($black-color);
+    height: 600px;
+    
+    &-content{
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 85%;
+      // padding-top: 7rem;
+    }
+
+    &-image{
+      display: none;
+    }
+    p{
+      padding: 1rem 0;
+    }
+
+
+
+
+
+
+  }
+  
+
+
+  // .showcase{
+  //   &-content{
+  //     max-width: 100%;
+  //   }
+  //   &-image{
+  //     display: none;
+  //   }
+  // }
+}
+
+
+
+
+
+
+
+/** Large Screen Size ***/
+@media(min-width: 768px) {
+  .navbar-toggler{
+    @include hide;
+  }
+}
+
+
+/** Large Screen Size ***/
+@media(max-width: 1200px) {
+  
+}

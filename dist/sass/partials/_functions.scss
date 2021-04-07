@@ -1,0 +1,67 @@
+%container{
+  width: 80%;
+  margin: 0 auto;
+  
+}
+
+
+@mixin hide(){
+  display: none;
+}
+
+@mixin show{
+  display: block;
+}
+
+
+
+
+
+/** Colors **/
+@function set-text-color($color){
+  @if(lightness($color) > 70){
+    @return #333;
+  }
+  @else{
+    @return #fff;
+  }
+}
+
+@mixin set-bg-to-text($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+
+@mixin btn-hover($color){
+  &:hover{
+    
+    @include set-bg-to-text($color);
+  }
+}
+
+
+/** Spaces **/
+
+@mixin generate-spaces {
+  @each $constraints in $layout-constraints {
+    @each $size in $layout-space-sizes {
+        .#{$constraints}-#{$size}{
+          margin: #{$size}rem;
+        }
+    
+        .#{$constraints}y-#{$size}{
+          margin: #{$size}rem 0;
+        }
+    
+        .#{$constraints}x-#{$size}{
+          margin: 0 #{$size}rem;
+        }
+        .#{$constraints}l-#{$size}{
+          margin-left: #{$size}rem;
+        }
+        .#{$constraints}r-#{$size}{
+          margin-right: #{$size}rem;
+        }
+      }
+    }
+}

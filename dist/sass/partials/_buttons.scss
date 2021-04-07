@@ -1,0 +1,55 @@
+
+//create a shared property
+
+%btn{
+  padding: .8rem 2rem;
+  border-radius: .1rem;
+  display: inline-block;
+  transition: all 200ms linear;
+  &:hover{
+    transform: scale(.98);
+  }
+}
+
+
+
+
+.btn-primary{
+  @extend %btn;
+  @include set-bg-to-text($primary-color);
+}
+
+.btn-secondary{
+  @extend %btn;
+  @include set-bg-to-text($secondary-color);
+}
+.btn-light{
+  @extend %btn;
+  background-color: $light-color;
+}
+
+/* Outlines */
+.btn-primary-outline{
+  @extend %btn;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  @include btn-hover($primary-color);
+}
+
+.btn-secondary-outline{
+  @extend %btn;
+  border: 1px solid $secondary-color;
+  color: $secondary-color;
+  @include btn-hover($secondary-color);
+}
+
+
+/* Links */
+
+
+.btn-link{
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}

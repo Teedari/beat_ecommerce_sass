@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .box{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ee2f;
+  }
+</style>
+<body>
+  <div class="box"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
+  <script>
+    anime({
+      targets: '.box',
+      translateX: 400
+    });
+  </script>
+</body>
+</html>

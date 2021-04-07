@@ -1,0 +1,143 @@
+@import "./partials/variables";
+@import "./partials/functions";
+@import "./partials/utilities";
+@import "./partials/buttons";
+
+
+
+
+
+
+.showcase {
+  @include set-bg-to-text($black-color);
+  height: 600px;
+  &-content{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 85%;
+    padding-top: 2rem;
+  }
+  p{
+    padding: 1rem 0;
+  }
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding:  1rem 0;
+  @extend %container;
+  &-brand{
+    font-size: 1.3rem;
+    color: $primary-color;
+    font-weight: 800;
+    span{
+      color: $secondary-color;
+    }
+  }
+
+  &-toggler{
+    background-color: lighten($color:$bg-color, $amount: 10%);
+    border-radius: .2rem;
+    box-shadow:  0 0px 6px rgba(148, 145, 145, 0.342);
+    height: 30px;
+    padding: 1rem .5rem;
+    display: grid;
+    place-content: center;
+    &-icon{
+      position: relative;
+      display: inline-block;
+      width: 2rem;
+      height: .2rem;
+      @include set-bg-to-text($black-color);
+      &::after{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: -.5rem;
+        @include set-bg-to-text($black-color);
+      }
+      &::before{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: .5rem;
+        @include set-bg-to-text($black-color);
+      }
+    }
+  }
+  .navbar-nav{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    .nav-item{
+      margin: 0;
+      
+      &:not(:first-child){
+        margin-left: .5rem;
+      }
+      .nav-link{
+        text-decoration: none;
+        color: $light-color;
+        cursor: pointer;
+        &:hover{
+          color: $secondary-color;
+        }
+      }
+
+    }
+
+  }
+}
+
+
+#social{
+  padding: .5rem 0  1rem 0;
+  background-color: lighten($color: #000000, $amount: 2);
+  .container{
+    padding: .5rem 0;
+  }
+
+  .listview{
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+  }
+  .social-account{
+    display: inline-block;
+    text-align: center;
+    margin-left: 2rem;
+    a{
+      color: white;
+      padding: 2.5rem;
+      display: inline-block;
+      font-size: .8rem;
+      border-radius: 50%;
+      text-decoration: none;
+
+      i{
+        color: $secondary-color;
+      }
+    }
+
+  }
+
+}
+
+
+
+
+
+
+
+
+@import "./partials/mobile";
