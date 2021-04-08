@@ -13,6 +13,37 @@
   display: block;
 }
 
+%scroll-widget-horizontal{
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+@mixin scroll-horizontal() {
+  @extend %scroll-widget-horizontal;
+  overflow-x: auto;
+}
+
+@mixin scroll-vertical($width ,$height) {
+  @extend %scroll-widget-horizontal;
+  overflow-y: auto;
+  height: $height;
+  width: $width;
+}
+
+
+/** Layout Functions **/
+@function singleChildScrollView($direction) {
+  @if($direction == 'horizontal'){
+    @return scroll-horizontal()
+  }
+}
+
+
 
 
 

@@ -135,6 +135,61 @@
 
 
 
+/*** Category Section **/
+.category{
+  padding: 2rem 1rem;
+  width: 100%;
+  background-color: $bg-color;
+  h2{
+    color: #fff;
+  }
+}
+
+.scroll-view{
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+}
+
+.figure{
+  max-width:185px;
+  height: 185px;
+  position: relative;
+  background-color: blue;
+  margin-right: 1rem;
+
+
+  &-img{
+    width: 100%;
+    height: 100%;
+    width: auto;
+    top: 0;
+    bottom: 0;
+
+  }
+
+  &-placeholder{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.6);
+    cursor: pointer;
+    i{
+      display: grid;
+      place-content: center;
+      height: 100%;
+      font-size: 3rem;
+    }
+  }
+}
+
+
+
 
 
 
