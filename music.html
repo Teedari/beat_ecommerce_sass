@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+  }
+
+  .player{
+   width: 80%;
+    background: #4d4d4d;
+    padding: 1rem ;
+    display: flex;
+    align-items: center;
+  }
+
+  button{
+    outline: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #fff;
+  }
+  button:hover{
+    color: #00B6FF;
+  }
+  button.circle{
+    border: 1px solid #f4f4f4;
+  }
+  button.circle:hover{
+    border-color:#00B6FF;
+  }
+
+  .form-control-inline{
+    flex: 1;
+  }
+
+  .form-control-inline input[type='range'] {
+    width: 100%;
+    -webkit-appearance: none;
+    outline: none;
+    height: 2px;
+  }
+
+  .form-control-inline input[type='range']::-webkit-slider-thumb {
+    
+    -webkit-appearance: none;
+    outline: none;
+    height: 10px;
+    width: 10px;
+    background-color: #00B6FF;
+  }
+</style>
+<body>
+  <!-- <div id="audio-player-container">
+    <p>Audio Player</p>
+    <button id="play-icon"><i class="fa fa-play" aria-hidden="true"></i></button>
+    <span id="current-time" class="time">0:00</span>
+    <input type="range" id="seek-slider" max="100" value="0">
+    <span id="duration" class="time">0:00</span>
+    <output id="volume-output">100</output>
+    <input type="range" id="volume-slider" max="100" value="100">
+    <button id="mute-icon"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
+  </div> -->
+
+  <div class="player">
+    <div class="button-group">
+      <button class="prev" id="prev"><i class="fa fa-step-backward" aria-hidden="true" onclick=""></i></button>
+      <button id="play" class="play circle" onclick="justplay()">
+        <i class="fa fa-play" aria-hidden="true"></i>
+      </button>
+      <button class="next" id="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+    </div>
+    <div class="form-control-inline" id="duration">
+      <input type="range" name="" id="duration_slider" min="0" max="100" value="0" onchange="change_duration()">
+    </div>
+  </div>
+
+  <script>
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    const play = document.getElementById('play');
+    const slider = document.getElementById('duration_slider');
+    
+
+
+    let timer;
+    let autoplay = 0;
+
+    let index_no = 0;
+    let playing_song = false;
+
+    let track = document.createElement('audio');
+
+
+    let load = () => {
+      track.src = "music/music.mp3";
+      track.load();
+      console.log(track);
+      timer = setInterval(function(){
+        let position = 0;
+
+        if(!isNaN(track.duration)){
+          position = track.currentTime * (100 / track.duration);
+          slider.value = position;
+        }
+      });
+    }
+
+    load();
+
+
+    //checking
+    let justplay = () => {
+      if(playing_song == false){
+        playsong();
+      }else{
+        pausesong();
+      }
+    }
+
+    const playsong=()=>{
+      track.play();
+      playing_song = true;
+      play.innerHTML = ` <i class="fa fa-pause" aria-hidden="true"></i>`;
+    }
+
+    const pausesong=()=>{
+      track.pause();
+      playing_song = false;
+      play.innerHTML = ` <i class="fa fa-play" aria-hidden="true"></i>`;
+    }
+    
+
+    function change_duration(){
+      const slider_position = track.duration * (slider.value / 100);
+      track.currentTime = slider_position;
+      console.log(track);
+    }
+     
+  </script>
+</body>
+</html>

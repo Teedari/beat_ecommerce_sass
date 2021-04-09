@@ -154,42 +154,111 @@
 }
 
 .figure{
-  max-width:185px;
-  height: 185px;
-  position: relative;
-  background-color: blue;
-  margin-right: 1rem;
-
-
-  &-img{
-    width: 100%;
-    height: 100%;
-    width: auto;
-    top: 0;
-    bottom: 0;
-
-  }
-
-  &-placeholder{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    bottom: 0;
-    z-index: 2;
-    background-color: rgba(0,0,0,0.6);
-    cursor: pointer;
-    i{
-      display: grid;
-      place-content: center;
+  .figure-header{
+    max-width:185px;
+    height: 185px;
+    position: relative;
+    color: white;
+    margin-right: 1rem;
+  
+  
+    &__img{
+      width: 100%;
       height: 100%;
-      font-size: 3rem;
+   
+      top: 0;
+      bottom: 0;
+  
     }
+  
+    &__placeholder{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+      background-color: rgba(0,0,0,0.6);
+      cursor: pointer;
+      i{
+        display: grid;
+        place-content: center;
+        height: 100%;
+        font-size: 3rem;
+      }
+    }
+  }
+  .figure-body{
+    @include set-bg-to-text($black-color);
   }
 }
 
 
 
+
+
+
+
+
+
+
+
+
+
+/**** Player *****/
+.player{
+  width: 100%;
+   background: #4d4d4d;
+   padding: 1rem ;
+   display: flex;
+   align-items: center;
+
+   .button-group{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+
+   button{
+     outline: none;
+     border: none;
+     width: 35px;
+     height: 35px;
+     border-radius: 50%;
+     background-color: transparent;
+     color: #fff;
+   }
+   button:hover{
+     color: #00B6FF;
+   }
+   button.circle{
+     border: 1px solid #f4f4f4;
+   }
+   button.circle:hover{
+     border-color:#00B6FF;
+   }
+  
+   .form-control-inline{
+     flex: 1;
+   }
+  
+   .form-control-inline input[type='range'] {
+     width: 100%;
+     -webkit-appearance: none;
+     outline: none;
+     height: 2px;
+   }
+  
+   .form-control-inline input[type='range']::-webkit-slider-thumb {
+     
+     -webkit-appearance: none;
+     outline: none;
+     height: 10px;
+     width: 10px;
+     background-color: #00B6FF;
+   }
+
+ }  
 
 
 

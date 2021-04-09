@@ -80,58 +80,56 @@
 
 <section class="category">
   <h2>Recommended Playlists</h2>
-  <div class="scroll-view">
-    <div class="figure">
-      <div class="figure-placeholder"><i class="fa fa-play"></i></div>
-      <img class='figure-img' src="images/cover1.jpg" alt="">
-    </div>
-    <div class="figure">
-      <div class="figure-placeholder"><i class="fa fa-play"></i></div>
-      <img class='figure-img' src="images/cover2.jpg" alt="">
-    </div>
-    <div class="figure">
-      <div class="figure-placeholder"><i class="fa fa-play"></i></div>
-      <img class='figure-img' src="images/cover3.jpg" alt="">
-    </div>
-    <div class="figure">
-      <div class="figure-placeholder"><i class="fa fa-play"></i></div>
-      <img class='figure-img' src="images/cover4.jpg" alt="">
-    </div>
-    <div class="figure">
-      <div class="figure-placeholder"><i class="fa fa-play"></i></div>
-      <img class='figure-img' src="images/cover5.jpg" alt="">
-    </div>
-
-    <div class="figure">
-      <div class="figure-placeholder"><i class="fa fa-play"></i></div>
-      <img class='figure-img' src="images/cover4.jpg" alt="">
-    </div>
-    <div class="figure">
-      <div class="figure-placeholder"><i class="fa fa-play"></i></div>
-      <img class='figure-img' src="images/cover3.jpg" alt="">
-    </div>
-    <div class="figure">
-      <div class="figure-placeholder"><i class="fa fa-play"></i></div>
-      <img class='figure-img' src="images/cover2.jpg" alt="">
-    </div>
-    <div class="figure">
-      <div class="figure-placeholder"><i class="fa fa-play"></i></div>
-      <img class='figure-img' src="images/cover5.jpg" alt="">
-    </div>
-    <div class="figure">
-      <div class="figure-placeholder"><i class="fa fa-play"></i></div>
-      <img class='figure-img' src="images/cover1.jpg" alt="">
-    </div>
-    <div class="figure">
-      <div class="figure-placeholder"><i class="fa fa-play"></i></div>
-      <img class='figure-img' src="images/cover2.jpg" alt="">
-    </div>
+  <div id="category1" class="scroll-view">
+    <figure class="figure">
+      <div class="figure-header">
+        <div class="figure-header__placeholder"><i class="fa fa-play"></i></div>
+        <img class='figure-header__img' src="images/cover1.jpg" alt="">
+      </div>
+     <div class="figure-body">
+      <h4>Title</h4>
+      <p class='muted'>52 tracks</p>
+     </div>
+    </figure>
+    
   </div>
 </section>
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="player">
+  <div class="button-group">
+    <button class="prev" id="prev"><i class="fa fa-step-backward" aria-hidden="true" onclick=""></i></button>
+    <button id="play" class="play circle">
+      <i class="fa fa-play" aria-hidden="true"></i>
+    </button>
+    <button class="next" id="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+  </div>
+  <div class="form-control-inline" id="duration">
+    <input type="range" name="" id="duration_slider" min="0" max="100" value="0" onchange="change_duration()">
+  </div>
+</div>
 
 
 
