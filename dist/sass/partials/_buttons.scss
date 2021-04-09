@@ -6,8 +6,10 @@
   border-radius: .1rem;
   display: inline-block;
   transition: all 200ms linear;
+  border: none;
   &:hover{
     transform: scale(.98);
+    outline: none;
   }
 }
 

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../pages/beat_view.scss"
+    ],
+    "names": [],
+    "file": "beat_view.css"
+}

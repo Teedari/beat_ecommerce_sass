@@ -2,7 +2,7 @@
 @import "./partials/functions";
 @import "./partials/utilities";
 @import "./partials/buttons";
-
+@import "./pages/beat_view";
 
 
 
@@ -259,6 +259,74 @@
    }
 
  }  
+
+
+
+
+
+
+ /**** Beat View Page ****/
+
+  .beat-showcase{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    background-color: lighten($color:$bg-color, $amount: 10%);
+    .beat-image{
+      width: 140px;
+      border-radius: 50%;
+      img{
+       width: 100%;
+       border-radius: 50%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+
+    .content{
+
+      &-head{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button{
+          outline: none;
+          border: none;
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          background-color: transparent;
+          color: #fff;
+          border: 2px solid $primary-color;
+          color: $primary-color;
+          margin-right: .5rem;
+        }
+      }
+
+      &-body{
+        text-align: center;
+        font-size: .9rem;
+      }
+    }
+}
+
+.options{
+  padding: 1rem 0;
+  &-box{
+    border: 1px solid $secondary-color;
+    display: inline-block;
+    padding: .4rem 1rem;
+    border-radius: 2rem;
+    font-size: .7rem;
+    font-weight: 800;
+    span{
+      color: $secondary-color;
+    }
+  }
+}
 
 
 
