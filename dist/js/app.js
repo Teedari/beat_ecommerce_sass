@@ -68,6 +68,53 @@
     }
 
     play.addEventListener('click', justplay);
+
+
+
+
+    ///add cards
+
+    function createRandomCards(){
+      const category = document.getElementById('category1');
+      var catString = '';
+      let i=0;
+      n = 0;
+      while(i <= 10){
+        if(n>4){
+          n=0;
+        }
+        n++;
+        catString += `
+        <div class="music-box">
+      <div class="music-box__header">
+        <img src="images/cover${n}.jpg" alt="" class="music-box__header-image">
+        <button class="music-box__header-button"><i class="fa fa-play-circle-o" aria-hidden="true"></i></button>
+      </div>
+       <div class="music-box__body">
+         <h2>Title${i}</h2>
+         <p>Lorem ipsum </p>
+       </div>
+    </div>
+        `
+        i++;
+      }
+
+      category.innerHTML = catString;
+    }
      
+    createRandomCards();
 
 })()
+/*
+<div class="music-box">
+      <!--music header-->
+      <div class="music-box__header">
+        <img src="images/cover5.jpg" alt="" class="music-box__header-image">
+        <button class="music-box__header-button"><i class="fa fa-play-circle-o" aria-hidden="true"></i></button>
+      </div><!-- /music header-->
+       <!--music header-->
+       <div class="music-box__body">
+         <h2>Title</h2>
+         <p>Lorem ipsum </p>
+       </div>
+    </div> */
